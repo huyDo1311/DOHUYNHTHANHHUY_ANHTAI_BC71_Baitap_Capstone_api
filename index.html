@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- <div class="dropdown pt-5">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Loại sản phẩm
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#" value="1">Samsung</a></li>
+              <li><a class="dropdown-item" href="#" value="2">Iphone</a></li>
+            </ul>
+          </div> -->
+        <div class="col-4 mt-5">
+            <select id="typeproduct" class="form-select" aria-label="Default select example" onchange="filterProduct()">
+                <option selected>Loại sản phẩm</option>
+                <option value="Samsung">Samsung</option>
+                <option value="Iphone">Iphone</option>
+            </select>
+        </div>
+        <!-- <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <i class="fa fa-cart mr-5">
+                <i class="fa fa-cart-arrow-down"></i>
+            </i>
+            (${totalQuality()})Giỏ hàng
+        </button> -->
+        <!-- <div class="card" style="">
+                        <img src="" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div> -->
+        <div class="row pt-5" id="tblDanhSachSP"></div>
+        <!-- 
+        <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <i class="fa fa-cart mr-5">
+              <i class="fa fa-cart-arrow-down"></i>
+            </i>
+            Giỏ hàng
+          </button> -->
+
+        <div style="--bs-modal-width: 1000px;" class="modal fade" id="exampleModal" tabindex="-1"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" style="padding: 30px">
+                <div class="modal-content" style="">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Giỏ Hàng</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="" id="cart">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Mã sp</th>
+                                        <th scope="col">Tên sản phẩm</th>
+                                        <th scope="col">Hình ảnh</th>
+                                        <th scope="col">Giá</th>
+                                        <th scope="col">Số lượng</th>
+                                        <th scope="col">Thành tiền</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="cartTable">
+                                    <!-- <tr>
+                                        <td>${item.id}</td>
+                                        <td>${item.name}</td>
+                                        <td>
+                                            <img style="width: 50px; height: 50px;" src="${item.img}" alt="" />
+                                        </td>
+                                        <td>${item.price}</td>
+                                        <td class="upDown">
+                                            <button onclick="updateQuality('${item.id}',${true})" class="btn btn-success">+</button>${item.quality}<button onclick="updateQuality('${item.id}',${false})" class="btn btn-success">-</button>
+                                        </td>
+                                        <td>${(item.quality * item.price).toLocaleString()}</td>
+                                        <td>
+                                            <button onclick="deleteProduct('${item.id}')" class="btn btn-danger">Xoá</button>
+                                        </td>
+                                      </tr> -->
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th colspan="5"></th>
+                                        <th>Tổng tiền</th>
+                                        <th id="total"></th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button onclick="payment()" class="btn btn-outline-success">Thanh toán</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+    
+
+    <!-- AXIOS CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.3/axios.min.js"
+        integrity="sha512-zJXKBryKlsiDaWcWQ9fuvy50SG03/Qc5SqfLXxHmk9XiUUbcD9lXYjHDBxLFOuZSU6ULXaJ69bd7blSMEgxXNQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
+    <!-- BOOTSTRAP JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
+    <!-- MAIN JS -->
+    <script src="./customer/model/CartItem.js"></script>
+    <script src="./customer/model/Cart.js"></script>
+    <script src="./customer/services/productService.js"></script>
+    <script src="./customer/controller/main.js"></script>
+</body>
+
+</html>
