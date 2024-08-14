@@ -27,13 +27,13 @@
               <li><a class="dropdown-item" href="#" value="2">Iphone</a></li>
             </ul>
           </div> -->
-        <div class="col-4 mt-5">
+        <!-- <div class="col-4 mt-5">
             <select id="typeproduct" class="form-select" aria-label="Default select example" onchange="filterProduct()">
                 <option selected>Loại sản phẩm</option>
                 <option value="Samsung">Samsung</option>
                 <option value="Iphone">Iphone</option>
             </select>
-        </div>
+        </div> -->
         <!-- <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
             <i class="fa fa-cart mr-5">
                 <i class="fa fa-cart-arrow-down"></i>
@@ -49,7 +49,7 @@
                             <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div> -->
-        <div class="row pt-5" id="tblDanhSachSP"></div>
+        <!-- <div class="row pt-5" id="tblDanhSachSP"></div> -->
         <!-- 
         <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
             <i class="fa fa-cart mr-5">
@@ -58,7 +58,7 @@
             Giỏ hàng
           </button> -->
 
-        <div style="--bs-modal-width: 1000px;" class="modal fade" id="exampleModal" tabindex="-1"
+        <!-- <div style="--bs-modal-width: 1000px;" class="modal fade" id="exampleModal" tabindex="-1"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" style="padding: 30px">
                 <div class="modal-content" style="">
@@ -81,21 +81,6 @@
                                     </tr>
                                 </thead>
                                 <tbody id="cartTable">
-                                    <!-- <tr>
-                                        <td>${item.id}</td>
-                                        <td>${item.name}</td>
-                                        <td>
-                                            <img style="width: 50px; height: 50px;" src="${item.img}" alt="" />
-                                        </td>
-                                        <td>${item.price}</td>
-                                        <td class="upDown">
-                                            <button onclick="updateQuality('${item.id}',${true})" class="btn btn-success">+</button>${item.quality}<button onclick="updateQuality('${item.id}',${false})" class="btn btn-success">-</button>
-                                        </td>
-                                        <td>${(item.quality * item.price).toLocaleString()}</td>
-                                        <td>
-                                            <button onclick="deleteProduct('${item.id}')" class="btn btn-danger">Xoá</button>
-                                        </td>
-                                      </tr> -->
                                 </tbody>
                                 <tfoot>
                                     <tr>
@@ -113,12 +98,64 @@
                     </div>
                 </div>
             </div>
+        </div> -->
+    </div>
+
+    <!-- -------------------------------------------------------- -->
+
+    <header>
+        <div class="main-container">
+            <div class="logo" onclick="fetchListProduct()"><a href="./index.html">Home</a></div>
+            <div class="group_right">
+                <a href="./customer/view/cart.html">
+                    <div class="cart">
+                        <div class="img"><img src="./asset/img/image 8.png" alt=""></div>
+                        <div onclick="renderCart()" class="number_cart">
+                            <p id="number" class="number"></p>
+                        </div>
+                    </div>
+                </a>
+                <div class="item_login">
+                    <div class="login">Login</div>
+                    <div class="register">Register</div>
+                </div>
+            </div>
         </div>
+    </header>
+    <section class="feature">
+        
+        <div class="container">
+            <div class="col-12 col-md-2 mt-5">
+                <select id="typeproduct" class="form-select" aria-label="Default select example" onchange="filterProduct()">
+                    <option selected>Loại sản phẩm</option>
+                    <option value="Samsung">Samsung</option>
+                    <option value="Iphone">Iphone</option>
+                </select>
+            </div>
+            <span class="title_feature">-Product Feature -</span>
+            <div id="productList" class="product_feature">
+                <div class="product_container col-sx-12 col-md-6 col-xl-3 mb-2 p-4">
 
-    </div>
-    </div>
+                    <div class="product_items ">
+                        <div class="products ">
+                            <div class="product_top">
+                                <div class="img"><img src="https://cdn.tgdd.vn/Products/Images/42/114115/iphone-x-64gb-hh-600x600.jpg" alt=""></div>
+                                <div class="product_name mt-2 mb-2">iphoneX</div>
+                                <div class="product_desc mb-2">Thiết kế mang tính đột phá</div>
+                            </div>
+                            <div class="product_bottom">
+                                <div class="button_buy p-3"><button>Buy now</button></div>
+                                <div class="price"><span>85$</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
 
-    
+
 
     <!-- AXIOS CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.3/axios.min.js"

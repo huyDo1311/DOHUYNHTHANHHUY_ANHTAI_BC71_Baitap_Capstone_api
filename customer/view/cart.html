@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../../css/index.css">  
+</head>
+
+<body>
+    <header>
+        <div class="main-container">
+            <div class="logo"><a href="../../index.html">Home</a></div>
+            <div class="group_right">
+                <a href="#">
+                    <div class="cart">
+                        <div class="img"><img src="../../asset/img/image 8.png" alt=""></div>
+                        <div onclick="renderCart()" class="number_cart">
+                            <p id="number" class="number"></p>
+                        </div>
+                    </div>
+                </a>
+                <div class="item_login">
+                    <div class="login">Login</div>
+                    <div class="register">Register</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="cart_body">
+        <div class="container">
+            <div class="cart_title"><h1>Cart</h1></div>
+            <div class="cart_line"><hr style="height: 1px"></div>
+            <div class="cart_content">
+                <table class="table">
+                    <thead class="table-dark">
+                      <tr>
+                        <th scope="col"><input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input"></th>
+                        <th scope="col">id</th>
+                        <th scope="col">img</th>
+                        <th scope="col">name</th>
+                        <th scope="col">price</th>
+                        <th scope="col"></th>
+                        <th scope="col">quality</th>
+                        <th scope="col"></th>
+                        <th scope="col">total</th>
+                        <th scope="col">action</th>
+                      </tr>
+                    </thead>
+                    <tbody id="cartTable">
+
+                      <tfoot>
+                        <tr>
+                            <th colspan="7"></th>
+                            <th>Tổng tiền</th>
+                            <th id="total"></th>
+                            <th><button onclick="payment()" class="btn btn-outline-success">Thanh toán</button></th>
+                        </tr>
+                    </tfoot>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <!-- AXIOS CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.3/axios.min.js"
+        integrity="sha512-zJXKBryKlsiDaWcWQ9fuvy50SG03/Qc5SqfLXxHmk9XiUUbcD9lXYjHDBxLFOuZSU6ULXaJ69bd7blSMEgxXNQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
+    <!-- BOOTSTRAP JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
+    <!-- MAIN JS -->
+    <script src="../model/CartItem.js"></script>
+    <script src="../model/Cart.js"></script>
+    <script src="../services/productService.js"></script>
+    <script src="../controller/main.js"></script>
+</body>
+
+</html>
