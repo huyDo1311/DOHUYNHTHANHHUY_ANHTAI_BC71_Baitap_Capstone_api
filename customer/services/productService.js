@@ -1,4 +1,4 @@
-var urlApi = "https://66a7891553c13f22a3d01a82.mockapi.io/Products";
+var urlApi = "https://66bc6f5a24da2de7ff6a7d20.mockapi.io/captonesjs";
 
 function getListService() {
   return axios({
