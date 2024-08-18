@@ -2,10 +2,10 @@
 
 ## Phân chi công việc
 
-| STT | Task Name | Start      | Finish | %    |               Name |
-| :-- | --------- | ---------- | ------ | ---- | -----------------: |
-| 1   | customer  | 08.08.2024 |        | 100% | Đỗ Huỳnh Thanh Huy |
-| 2   | admin     | 08.08.2024 |        | 100% |            Anh Tài |
+| STT | Task Name | Start      | Finish     | %    |                Name |
+| :-- | --------- | ---------- | ---------- | ---- | ------------------: |
+| 1   | customer  | 08.08.2024 | 18.08.2024 | 100% | Đỗ Huỳnh Thanh Huy |
+| 2   | admin     | 08.08.2024 | 18.08.2024 | 100% |            Anh Tài  |
 
 ## Link video youtube
 
