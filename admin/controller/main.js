@@ -1,5 +1,5 @@
 
-var urlAPI = "https://66bc6f5a24da2de7ff6a7d20.mockapi.io/captonesjs";
+var urlAPI = "https://66a7891553c13f22a3d01a82.mockapi.io/Products";
 
 function fetListProduct(){
     axios({
